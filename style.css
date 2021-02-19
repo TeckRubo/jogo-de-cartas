@@ -2,7 +2,6 @@ body {
   background-color: #100e17;
   font-family: 'Open Sans', sans-serif;
 }
-
 .container {
   position: absolute;
   height: 300px;
@@ -99,4 +98,8 @@ svg {
 .card:hover .stroke {
   stroke-dashoffset: 100;
   transition: 0.6s ease-out;
+}
+
+center{
+  width:100% ;
 }
