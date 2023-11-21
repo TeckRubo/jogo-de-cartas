@@ -1,0 +1,90 @@
+.card {
+    width: 100px;
+    height: 150px;
+    /* background-color: white;*/  
+    background-color: #17141d;
+    box-shadow: #000 4px 1px 5px;   
+    border-radius: 0px;
+    transition: 0.4s ease-out;
+    position: relative;
+    border: 1px solid #0000007a;
+}
+
+.card:hover:not(.back) {
+    transform: translateY(-10px);
+    transition: 0.4s ease-out;
+    border-image: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000) 30;
+    animation: glowing 20s linear infinite;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+.card:active{
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+.back { 
+    /* background: repeating-linear-gradient(-70deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);  */
+
+    background: linear-gradient(90deg, #201c2e 0%, #4f437a 50%, #201c2e 100%);
+}
+.back * { display: none; }
+
+.number {
+    position: absolute;
+    width: 25px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.number-top {
+    top: 8px;
+    left: 4px;
+}
+.number-bottom {
+    bottom: 8px;
+    right: 4px;
+    transform: rotate(180deg);
+}
+
+.suit {
+    width: 25px;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+}
+.suit-top {
+    top: 20px;
+    left: 4px;
+}
+.suit-bottom {
+    bottom: 20px;
+    right: 4px;
+    transform: rotate(180deg);
+}
+
+.suit-center {
+    font-size: 70px;
+    left: calc(50% - 20px);
+    top: calc(50% - 40px);
+}
+
+.spades, .clubs { 
+    color: white;
+    /* -webkit-text-stroke: 1px #757575;  */
+}
+.hearts, .diamonds { 
+    color: #e98f8f;
+    /* -webkit-text-stroke: 1px #fbacac;  */
+}
+
+.spades .suit:after { content: '♠' }
+.hearts .suit:after { content: '♥' }
+.diamonds .suit:after { content: '♦' }
+.clubs .suit:after { content: '♣' }

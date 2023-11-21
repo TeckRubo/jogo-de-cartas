@@ -1,19 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALPHA 0.0</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paciência</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <link rel="stylesheet" type="text/css" href="css/card.css">
+    <link rel="stylesheet" type="text/css" href="css/loader.css">
+    <script src="js/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 </head>
 <body>
-    <div class='container'> 
-        <center>
-            <form id='escolher_jogo'>
-                <button type='submit'>Jogar</button>
-            </form>
-        </center>
+    <div class="center" id="loader">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
     </div>
+    <div id="board">
+        <div class="board-top">
+            <div id="pool">
+                <button class='botao-reset' id="resetButton"><i class="icon fas fa-sync-alt"></i></button>
+            </div>
+            <div id="pool-face"></div>
+            <div></div>
+            <div class="pile"></div>
+            <div class="pile"></div>
+            <div class="pile"></div>
+            <div class="pile"></div>
+        </div>
+        <div id="decks">
+            <div class="deck"></div>
+            <div class="deck"></div>
+            <div class="deck"></div>
+            <div class="deck"></div>
+            <div class="deck"></div>
+            <div class="deck"></div>
+            <div class="deck"></div>
+        </div>
+        <div id="score">Pontuação: <span id="scoreValue">0</span></div>
+    </div>
+    <script src="js/board.js"></script>
+    <script src="js/card.js"></script>
+    <script>
+        new Board('#board');
+        $(window).on("load", function(){
+            setTimeout(function() { 
+                $("#loader").css("display", "none");
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
