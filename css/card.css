@@ -3,21 +3,23 @@
     height: 150px;
     /* background-color: white;*/  
     background-color: #17141d;
-    box-shadow: #000 4px 1px 5px;   
-    border-radius: 0px;
-    transition: 0.4s ease-out;
+    box-shadow: #333333 0px 0px 2px 0px;
+    transition: 0.4s;
     position: relative;
-    border: 1px solid #0000007a;
+    border: 1px solid #ffffff24;
+    z-index: 999;
+    border-radius: 11px;
 }
 
 .card:hover:not(.back) {
-    transform: translateY(-10px);
-    transition: 0.4s ease-out;
-    border-image: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000) 30;
-    animation: glowing 20s linear infinite;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0px;
+    transform: translateY(-7px);
+    /* transition: 0.4s ease-out; */
+    border: double 1px transparent;
+    border-radius: 11px;
+    background-image: linear-gradient(#17141d, #17141d), radial-gradient(circle at top left,#ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
     cursor: move; /* fallback if grab cursor is unsupported */
     cursor: grab;
     cursor: -moz-grab;
@@ -30,8 +32,12 @@
 }
 .back { 
     /* background: repeating-linear-gradient(-70deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);  */
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 
-    background: linear-gradient(90deg, #201c2e 0%, #4f437a 50%, #201c2e 100%);
+    background: linear-gradient(180deg, #4e3159 0%, #1f1c2e 18%);
 }
 .back * { display: none; }
 

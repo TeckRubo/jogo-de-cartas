@@ -35,9 +35,9 @@ class Card {
             const $siblings = Array.from($parent.children);
             const cardIndex = $siblings.indexOf($c);
             if ($parent.classList.contains('deck') && $siblings.length > 1 && cardIndex + 1 !== $siblings.length) {
-                console.log($siblings, cardIndex);
+                // console.log($siblings, cardIndex);
                 const $bottomSiblings = $siblings.slice(cardIndex + 1);
-                console.log($bottomSiblings);
+                // console.log($bottomSiblings);
                 let $lastSibling = $c;
                 for (let i = 0; i < $bottomSiblings.length; i++) {
                     if (+$bottomSiblings[i].dataset.number + 1 !== +$lastSibling.dataset.number) {

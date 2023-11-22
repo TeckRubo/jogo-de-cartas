@@ -9,7 +9,7 @@ class Board {
         this._$pool = $board.querySelector('#pool');
         this._$poolFace = $board.querySelector('#pool-face');
         const $piles = Array.from($board.querySelectorAll('.pile'));
-        console.log($piles);
+        // console.log($piles);
         this._$decks = Array.from($board.querySelectorAll('#decks .deck'));
         this._$score = $board.querySelector('#scoreValue');
         this._score = 0;
